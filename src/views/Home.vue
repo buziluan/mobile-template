@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="home">
+        <van-button type="primary" @click="handleClickTest">默认按钮</van-button>
+        <van-overlay :show="isShow"></van-overlay>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+    import {Button, Overlay} from "vant"
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'Home',
+        components: {VanButton: Button, VanOverlay: Overlay},
+        data() {
+            return {
+                isShow: false
+            }
+        },
+        methods: {
+            handleClickTest() {
+                // this.isShow = true
+                this.$toast.loading({
+                    message: '加载中...',
+                    forbidClick: true,
+                });
+            }
+        }
+    }
 </script>

@@ -7,8 +7,5 @@
  * 请求路径
  * @type {string}
  */
-const URI = process.env.NODE_ENV === 'production' ? '' : ""
+export const URI = process.env.NODE_ENV === 'production' ? '' : ""
 
-export default {
-    URI
-}

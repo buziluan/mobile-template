@@ -4,10 +4,10 @@
  *@创建日期：2020/6/2
  */
 import axios from 'axios'
-import {URI} from "../config"
+import {URI} from "../config/index.js"
 // 创建 axios 实例
 let service = axios.create({
-    baseURL:URI,
+    baseURL: URI,
     headers: {'Content-Type': 'application/json'},
     timeout: 60000
 })
